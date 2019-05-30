@@ -1,9 +1,10 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 # Create your models here.
 
-class User(models.Model):
-    name = models.CharField(max_length=40)
+class Users(models.Model):
+    username = models.CharField(max_length=40)
     email = models.EmailField()
 
     # Foreign Key
@@ -14,4 +15,4 @@ class Profile(models.Model):
     location = models.CharField(max_length=40)
 
     #Foreign Key
-    user_id = models.OneToOneField(User, on_delete=models.CASCADE)
+    user_id = models.OneToOneField(Users, on_delete=models.CASCADE)
