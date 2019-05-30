@@ -16,3 +16,9 @@ class Profile(models.Model):
 
     #Foreign Key
     user_id = models.OneToOneField(Users, on_delete=models.CASCADE)
+
+class Hood(models.Model):
+    hood_name = models.CharField(max_length=40)
+    hood_location = models.CharField(max_length=40)
+    occupant_count = models.IntegerField()
+    
