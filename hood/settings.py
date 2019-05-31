@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'business',
     'facilities',
     'users',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
