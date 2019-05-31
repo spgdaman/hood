@@ -1,6 +1,6 @@
 from django.forms import forms
 from django.contrib.auth.forms import UserCreationForm,UserChangeForm
-from .models import Users
+from .models import Users,Hood
 
 class UsersCreationForm(UserCreationForm):
 
@@ -14,3 +14,8 @@ class UsersChangeForm(UserChangeForm):
         model = Users
         fields = ('username', 'email')
 
+class NewHood(Hood):
+    
+    class meta:
+        model = Hood
+        fields = ('hood_name', 'hood_location', 'occupant_count')
