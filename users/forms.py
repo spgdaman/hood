@@ -4,9 +4,9 @@ from .models import Users,Hood
 
 class UsersCreationForm(UserCreationForm):
 
-    class Meta(UserCreationForm):
+    class meta:
         model = Users
-        fields = ('username', 'email')
+        fields = ('email')
 
 class UsersChangeForm(UserChangeForm):
 

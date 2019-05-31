@@ -3,19 +3,18 @@
 <html>
     <head>
         <title>Mtaani</title>
+        {% block styles %}
+            {% bootstrap_css %}
+        {% endblock %}
     </head>
-    {% block css %}
-        {% bootstrap_css %}
-    {% endblock %}
     <body>
+        {% block scripts %}
+            {% bootstrap_javascript jquery='full' %}
+        {% endblock %}
         {% include 'navbar.html' %}
 
         {% block content %}
 
-        {% endblock %}
-
-        {% block scripts %}
-            {% bootstrap_javascript jquery='full' %}
         {% endblock %}
     </body>
 </html>
