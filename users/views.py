@@ -1,7 +1,8 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .forms import NewHood,UsersCreationForm
-from django.contrib.auth import login,authenticate
+from .forms import NewHood,UserForm
+# from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
 
 def home(request):
     return render(request,'index.html')
@@ -21,12 +22,14 @@ def new_hood(request):
 
 def register(request):
     if request.method == 'POST':
-        form = UsersCreationForm(request.POST)
+        form = UserForm(request.POST)
         if form.is_valid():
             form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(request, f'Account created for {username}')
             return redirect('home')
     else:
-        form = UsersCreationForm()
+        form = UserForm()
         return render(request, 'auth/register.html', {'form': form})
 
             
