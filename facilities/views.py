@@ -18,3 +18,8 @@ def facility_search(request):
     else:
         message = "Please enter a correct search term"
         return render(request,"facilitysearch.html")
+
+@login_required(login_url='/accounts/login/')
+def facility(request,facility_id):
+    facility = Facilities.objects.filter(id=facility_id)
+    return render(request,'facility.html',{"facility":facility})
