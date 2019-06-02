@@ -5,4 +5,4 @@ from .models import Facilities
 @login_required(login_url='/accounts/login/')
 def facilities(request):
     facilities = Facilities.objects.all()
-    return render(request,{"facilities":facilities})
+    return render(request,'facilities.html',{"facilities":facilities})
