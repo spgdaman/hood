@@ -1,10 +1,10 @@
-# Awaards
+# Neighbourhood
 
-An attempt to clone the popular Awaards application.
+An app that shows what's happening in my neighbourhood, and lists all businesses and facilities in the user's locale
 
 ## Getting Started
 
-Clone or download the project using the [link](https://github.com/spgdaman/awaards.git) .
+Clone or download the project using the [link](https://github.com/spgdaman/hood.git) .
 
 ### Dependencies
 * confusable-homoglyphs==3.2.0
