@@ -3,9 +3,11 @@ from django.http import HttpResponse
 from .forms import NewHood,UserForm
 # from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
+from .models import Hood
 
 def home(request):
-    return render(request,'index.html')
+    hoods = Hood.objects.all()
+    return render(request,'index.html',{"hoods":hoods})
 
 def new_hood(request):
     # current_user = request.current_user
