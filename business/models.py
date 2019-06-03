@@ -15,4 +15,7 @@ class Business(models.Model):
         Business.objects.filter(id=business_id).delete()
         return True
 
-    
+    @classmethod
+    def find_business(cls,business_name):
+        businesses = Business.objects.filter(business_name__icontains=business_name)
+        return businesses
