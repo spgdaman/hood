@@ -23,4 +23,9 @@ class Hood(models.Model):
         hood = cls.objects.create(hood_name=name,hood_location=location,occupant_count=count)
         return hood
     
+    @classmethod
+    def delete_hood(cls,hood_id):
+        cls.objects.filter(id=hood_id).delete()
+        return True
+    
     
