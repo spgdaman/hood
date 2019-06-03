@@ -28,4 +28,9 @@ class Hood(models.Model):
         cls.objects.filter(id=hood_id).delete()
         return True
     
+    @classmethod
+    def find_hood(cls,hood_id):
+        hoods = cls.objects.filter(id__icontains=hood_id)
+        return hoods
+
     
