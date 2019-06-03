@@ -10,4 +10,9 @@ class Business(models.Model):
         business = Business.objects.create(business_name=name,business_email=email)
         return business
 
+    @classmethod
+    def delete_business(cls,business_id):
+        Business.objects.filter(id=business_id).delete()
+        return True
+
     
