@@ -17,3 +17,8 @@ def business_search(request):
     else:
         message = "Please enter a correct search term"
         return render(request,"businesssearch.html")
+
+@login_required(login_url='/accounts/login/')
+def business(request,business_id):
+    business = Business.objects.filter(id=business_id)
+    return render(request,'business.html',{"business":business})
