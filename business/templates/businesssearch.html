@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    
+    <div class="row">
+        {% if businesses %}
+            <h1 class="mx-auto">Found {{businesses | length}} facilities</h1>
+        {% else %}
+            <h1>Found 0 items for the search term {{message}}</h1>
+        {% endif %}
+    </div>
+
+    {% for business in businesses %}
+        <div class="row">
+            <h5 class="mx-auto"><a href="{% url 'business' business.id %}">{{business.business_name}}</a></h5>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
