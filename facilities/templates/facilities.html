@@ -2,18 +2,22 @@
 
 {% block content %}
 <div class="container">
-    {% for facility in facilities %}
-    <div class="row col-sm-12 col-md-12">
-        <div class="card">
-            <div class="card-header">
-                <h5>{{ facility.facility_name }}</h5>
+    <div class="row">
+
+        {% for facility in facilities %}
+            <div class="col-sm-12 col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>{{ facility.facility_name }}</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Email: {{ facility.facility_email }}</p>
+                        <p>Phone Number: {{ facility.phone_number }}</p>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-                <p>{{ facility.facility_email }}</p>
-                <p>{{ facility.phone_number }}</p>
-            </div>
-        </div>
+        {% endfor %}
+
     </div>
-    {% endfor %}
 </div>
 {% endblock %}
