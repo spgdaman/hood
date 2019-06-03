@@ -17,3 +17,10 @@ class Hood(models.Model):
     hood_name = models.CharField(max_length=40)
     hood_location = models.CharField(max_length=40)
     occupant_count = models.IntegerField()
+
+    @classmethod
+    def create_hood(cls,name,location,count):
+        hood = cls.objects.create(hood_name=name,hood_location=location,occupant_count=count)
+        return hood
+    
+    
