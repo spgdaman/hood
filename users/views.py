@@ -4,11 +4,14 @@ from .forms import NewHood,UserForm
 # from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .models import Hood
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url='/accounts/login/')
 def home(request):
     hoods = Hood.objects.all()
     return render(request,'index.html',{"hoods":hoods})
 
+@login_required(login_url='/accounts/login/')
 def new_hood(request):
     # current_user = request.current_user
     if request.method == 'POST':
@@ -22,6 +25,7 @@ def new_hood(request):
         form = NewHood()
     return render(request,'newhood.html',{'form':form})
 
+@login_required(login_url='/accounts/login/')
 def register(request):
     if request.method == 'POST':
         form = UserForm(request.POST)

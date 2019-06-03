@@ -34,7 +34,7 @@ class Hood(models.Model):
         return hoods
 
     @classmethod
-    def update_hood(cls,new_name)
+    def update_hood(cls,new_name):
         hood = cls.objects.update(hood_name=new_name)
         return hood
 
