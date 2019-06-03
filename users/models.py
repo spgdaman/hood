@@ -33,4 +33,7 @@ class Hood(models.Model):
         hoods = cls.objects.filter(id__icontains=hood_id)
         return hoods
 
-    
+    @classmethod
+    def update_hood(cls,new_name)
+        hood = cls.objects.update(hood_name=new_name)
+        return hood
