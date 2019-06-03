@@ -10,10 +10,8 @@ Clone or download the project using the [link](https://github.com/spgdaman/hood.
 * confusable-homoglyphs==3.2.0
 * Django==1.11
 * django-bootstrap4==0.0.8
-* django-registration==2.4.1
-* django-tinymce==2.8.0
-* djangorestframework==3.9.4
-* Pillow==6.0.0
+* django-registration==3.0.1
+* pkg-resources==0.0.0
 * psycopg2==2.8.2
 * pytz==2019.1
 
@@ -31,10 +29,9 @@ pip install django==1.11
 
 * Python
 * Django
-* HTML
-* CSS
+* HTML5
 * Bootstrap 4
-* Postgresql
+* PostgreSQL
 
 ## Authors
 
